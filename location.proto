@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package location;
+
+service Loader {
+    rpc LoadMAPSubscriberInfoInvoke (MAPSubscriberInfoInvoke) returns (Pong) {}
+    rpc LoadMAPSubscriberInfoResult (MAPSubscriberInfoResult) returns (Pong) {}
+}
+
+message MAPSubscriberInfoInvoke {
+    string CalledSCCPAddress  = 1;
+    string CallingSCCPAddress = 2;
+    uint32 OTID               = 3;
+    uint32 DTID               = 4;
+    string VLRNumber          = 5;
+    string MSISDN             = 6;
+    string IMSI               = 7;
+    string MAPMessage         = 8;
+}
+
+message MAPSubscriberInfoResult {
+    string CalledSCCPAddress  = 1;
+    string CallingSCCPAddress = 2;
+    uint32 OTID               = 3;
+    uint32 DTID               = 4;
+    string VLRNumber          = 5;
+    string MSISDN             = 6;
+    string IMSI               = 7;
+    string MAPMessage         = 8;
+    string LocationNumber     = 9;
+    uint32 MCC                = 10;
+    uint32 MNC                = 11;
+    uint32 LAC                = 12;
+    uint32 CI                 = 13;
+    uint32 Age                = 14;
+    string Status             = 15;
+    string Error              = 16;
+}
+
+message Pong {
+    uint32 Msg = 1;
+}
+
