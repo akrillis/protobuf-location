@@ -12,10 +12,15 @@ message MAPSubscriberInfoInvoke {
     string CallingSCCPAddress = 2;
     uint32 OTID               = 3;
     uint32 DTID               = 4;
-    string VLRNumber          = 5;
-    string MSISDN             = 6;
-    string IMSI               = 7;
-    string MAPMessage         = 8;
+    string VLR                = 5;
+    string MSC                = 6;
+    string HLR                = 7;
+    string MME                = 8;
+    string MSISDN             = 9;
+    string IMSI               = 10;
+    string IMEI               = 11;
+    string Message            = 12;
+    string Protocol           = 13;
 }
 
 message MAPSubscriberInfoResult {
@@ -23,18 +28,26 @@ message MAPSubscriberInfoResult {
     string CallingSCCPAddress = 2;
     uint32 OTID               = 3;
     uint32 DTID               = 4;
-    string VLRNumber          = 5;
-    string MSISDN             = 6;
-    string IMSI               = 7;
-    string MAPMessage         = 8;
-    string LocationNumber     = 9;
-    uint32 MCC                = 10;
-    uint32 MNC                = 11;
-    uint32 LAC                = 12;
-    uint32 CI                 = 13;
-    uint32 Age                = 14;
-    string Status             = 15;
-    string Error              = 16;
+    string VLR                = 5;
+    string MSC                = 6;
+    string HLR                = 7;
+    string MME                = 8;
+    string MSISDN             = 9;
+    string IMSI               = 10;
+    string IMEI               = 11;
+    string Message            = 12;
+    string Protocol           = 13;
+    string LocationNumber     = 14;
+    uint32 MCC                = 15;
+    uint32 MNC                = 16;
+    uint32 LAC                = 17;
+    uint32 CI                 = 18;
+    double Latitude           = 19;
+    double Longitude          = 20;
+    uint32 Radius             = 21;
+    uint32 Age                = 22;
+    string Status             = 23;
+    string Error              = 24;
 }
 
 message Pong {
