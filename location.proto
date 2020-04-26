@@ -1,10 +1,17 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 package location;
 
 service Loader {
     rpc LoadMAPSubscriberInfoInvoke (MAPSubscriberInfoInvoke) returns (Pong) {}
     rpc LoadMAPSubscriberInfoResult (MAPSubscriberInfoResult) returns (Pong) {}
+}
+
+service LoaderStreams {
+    rpc LoadMAPSubscriberInfoInvoke (stream MAPSubscriberInfoInvoke) returns (google.protobuf.Empty) {}
+    rpc LoadMAPSubscriberInfoResult (stream MAPSubscriberInfoResult) returns (google.protobuf.Empty) {}
 }
 
 message MAPSubscriberInfoInvoke {
