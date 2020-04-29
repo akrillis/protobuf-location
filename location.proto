@@ -5,13 +5,10 @@ import "google/protobuf/empty.proto";
 package location;
 
 service Loader {
-    rpc LoadMAPSubscriberInfoInvoke (MAPSubscriberInfoInvoke) returns (Pong) {}
-    rpc LoadMAPSubscriberInfoResult (MAPSubscriberInfoResult) returns (Pong) {}
-}
-
-service LoaderStreams {
-    rpc LoadMAPSubscriberInfoInvoke (stream MAPSubscriberInfoInvoke) returns (google.protobuf.Empty) {}
-    rpc LoadMAPSubscriberInfoResult (stream MAPSubscriberInfoResult) returns (google.protobuf.Empty) {}
+    rpc LoadMAPSubscriberInfoInvoke (MAPSubscriberInfoInvoke) returns (google.protobuf.Empty) {}
+    rpc LoadMAPSubscriberInfoResult (MAPSubscriberInfoResult) returns (google.protobuf.Empty) {}
+    rpc LoadStreamMAPSubscriberInfoInvoke (stream MAPSubscriberInfoInvoke) returns (google.protobuf.Empty) {}
+    rpc LoadStreamMAPSubscriberInfoResult (stream MAPSubscriberInfoResult) returns (google.protobuf.Empty) {}
 }
 
 message MAPSubscriberInfoInvoke {
